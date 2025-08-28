@@ -1,6 +1,10 @@
 from jdatetime import datetime,timedelta,JalaliToGregorian,GregorianToJalali
 import datetime as dt
 import time
+from win10toast import ToastNotifier
+import threading
+from DB.dbcrator import read
+
 year=datetime.now().year
 
 
@@ -54,3 +58,22 @@ def getminute():
     return minute
 
 
+
+def display_notification():
+    try:
+        result=read()
+        for item in result:
+            if dt.datetime.now().date==item.time.date() and dt.datetime.now().hour==item.time.hour and dt.datetime.now().minute==item.time.minute:
+                print(True)
+                toaster=ToastNotifier
+                toaster.show_toast("Remember",item.task,duration=120)
+    except Exception as e:
+        print("error: ",e)
+
+def Background_task():
+    while True:
+        display_notification()
+        time.sleep(1)
+background_thread=threading.Thread(target=Background_task)
+background_thread.daemon=True
+background_thread.start()

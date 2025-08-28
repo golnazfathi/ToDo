@@ -105,19 +105,19 @@ def createstats(display):
     stats_frame.place(x=10, y=5)
 
     title = CTkFrame(display, 100, 28, 5, 0, bg_color="#222222", fg_color="#9f4cd3")
-    title.place(x=35, y=10)
+    title.place(x=30, y=10)
 
     lbl_title = CTkLabel(title, text="your task", text_color="#070606")
     lbl_title.place(x=25, y=1)
 
     data = CTkFrame(display, 100, 28, 5, 0, bg_color="transparent", fg_color="#9f4cd3")
-    data.place(x=230, y=10)
+    data.place(x=200, y=10)
 
     ibi_date = CTkLabel(data, text="date", text_color="#070606")
     ibi_date.place(x=38, y=1)
 
     time = CTkFrame(display, 100, 28, 5, 0, bg_color="#222222", fg_color="#9f4cd3")
-    time.place(x=420, y=10)
+    time.place(x=385, y=10)
 
     ibi_time = CTkLabel(time, text="time", text_color="#070606")
     ibi_time.place(x=38, y=1)

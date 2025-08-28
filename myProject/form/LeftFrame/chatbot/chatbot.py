@@ -14,7 +14,7 @@ def CreatChatbot(diplay):
 
     entry = CTkEntry(
         diplay,
-        190,
+        180,
         35,
         5,
         1,
@@ -28,14 +28,13 @@ def CreatChatbot(diplay):
 
     send_chat = CTkButton(
         diplay,
-        text="✔",
-        width=35,
+        width=40,
         height=35,
-        corner_radius=5,
-        border_width=0,
-        bg_color="#c88aef",
-        fg_color="#2f024b",
+        text="✔",
+        text_color="#080707",
+        fg_color="#9f4cd3",
+        border_width=2,
         hover=False,
-        text_color="black",
+        
     )
-    send_chat.place(x=203, y=455)
+    send_chat.place(x=195, y=455)
